@@ -24,7 +24,6 @@ const AvatarItem = (dialog) => {
 
   const handleCleaning = () => {
     setSelectedFile("");
-    console.log("cleaning");
   };
   const onOpenDialog = () => {
     if (avatar && avatar.trim() !== "" && avatar.length > 0) {
@@ -41,7 +40,9 @@ const AvatarItem = (dialog) => {
           onClean={handleCleaning}
         />
       )}
+
       <Stack spacing={1} direction="row" alignItems="center">
+        {/* Avatar */}
         <Avatar
           sx={{
             //   bgcolor: color,

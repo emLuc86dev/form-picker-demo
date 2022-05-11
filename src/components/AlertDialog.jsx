@@ -18,14 +18,13 @@ export default function AlertDialog({ image, onShowed, onClean }) {
     setOpen(false);
     //lifting state app to handle avatar click to show the image into th dialog
     onShowed();
-    if(e.target.name === 'clean') {
-        
-        onClean()
+    if (e.target.name === "clean") {
+      onClean(); //lifting state app to clean avatar image
     }
   };
 
   return (
-    <div>
+    <>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -46,12 +45,14 @@ export default function AlertDialog({ image, onShowed, onClean }) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button name='clean' onClick={handleClose}>Clean</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
+          <Button name="clean" onClick={handleClose}>
+            Clean
           </Button>
+          {/* <Button onClick={handleClose} autoFocus>
+            Agree
+          </Button> */}
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }

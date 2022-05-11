@@ -13,6 +13,7 @@ import MessageLogo from "./components/MessageLogo";
 import image from "./assets/siteMap.svg";
 import { ThemeProvider } from "@mui/material/styles";
 import { darkTheme } from "./UI/Themes";
+import AvatarBadge from "./components/AvatarBadge";
 
 function App() {
   const [color, setColor] = useState("");
@@ -35,7 +36,8 @@ function App() {
             <Typography variant="h6" gutterBottom>
               Logo del esacio
             </Typography>
-            <AvatarItem />
+            {/* <AvatarItem /> */}
+            <AvatarBadge />
             <InputData />
             <Workers />
             <CirclePicker avatarColor={handleColor} />
