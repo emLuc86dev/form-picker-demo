@@ -29,7 +29,7 @@ function App() {
         <CssBaseline />
         <div className="data_container">
           <Stack spacing={1}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom bgcolor={color}>
               Configuracion
             </Typography>
             <Typography variant="h6" gutterBottom>

@@ -2,24 +2,34 @@ import styled from "@emotion/styled";
 import { PhotoCamera } from "@mui/icons-material";
 import { Avatar, Button, Stack } from "@mui/material";
 import React, { useState } from "react";
+import AlertDialog from "./AlertDialog";
 import MessageLogo from "./MessageLogo";
 
 const Input = styled("input")({
   display: "none",
 });
 
-const AvatarItem = () => {
+const AvatarItem = (dialog) => {
   const [selectedFile, setSelectedFile] = useState("");
+  const [showDialog, setShowDialog] = useState(false);
   let avatar = selectedFile;
 
   const handleUrlImage = (e) => {
+    //save image file pathname
     const data = URL.createObjectURL(e.target.files[0]);
     setSelectedFile(data);
     console.log(e.target.files[0].name);
   };
 
+  const onOpenDialog = () => {
+    if (avatar && avatar.trim() !== "" && avatar.length > 0) {
+      setShowDialog((preState) => !preState);
+    }
+  };
+
   return (
     <>
+      {showDialog && <AlertDialog image={avatar} onShowed={onOpenDialog} />}
       <Stack spacing={1} direction="row" alignItems="center">
         <Avatar
           sx={{
@@ -28,6 +38,7 @@ const AvatarItem = () => {
             height: 56,
           }}
           src={`${avatar}`}
+          onClick={onOpenDialog}
         />
 
         <label htmlFor="contained-button-file">

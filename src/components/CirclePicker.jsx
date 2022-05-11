@@ -8,8 +8,9 @@ function CirclePicker({ avatarColor }) {
   // const [hex, setHex] = useRef("#F44E3B");
 
   const handleAvaterColor = () => {
-    avatarColor(hex);
-    console.log("clicked from handleAvaterColor()", hex);
+
+    avatarColor(hex); //lifting state up
+    // console.log("clicked from handleAvaterColor()", hex);
   };
 
   return (
@@ -45,7 +46,7 @@ function CirclePicker({ avatarColor }) {
         onClick={handleAvaterColor}
         onChange={(color) => {
           setHex(color.hex);
-          handleAvaterColor();
+          // handleAvaterColor();
         }}
       />
       </Stack>

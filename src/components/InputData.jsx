@@ -18,29 +18,18 @@ const InputData = () => {
         <Typography gutterBottom variant="h6" sx={{ fontWeight: "bold" }}>
           Espaio de Nombre
         </Typography>
-        <TextField
-          sx={{
-            marginBottom: "25px",
-          }}
-          id="outlined-basic"
-          fullWidth
-          label="Esp. de trabajo"
-          variant="outlined"
-        />
+
+        <TextField fullWidth label="Esp. de trabajo" name="name" />
         <Typography gutterBottom variant="h6" sx={{ fontWeight: "bold" }}>
           Url del espacio (direcion web)
         </Typography>
-        <TextField
-        //   sx={{
-        //     marginBottom: "25px",
-        //   }}
-          id="outlined-basic"
-          fullWidth
-          label="Url del espacio"
-          variant="outlined"
-          //   helperText="Please enter your name"
-        />
-        <Stack spacing={1} direction="row" justifyContent="center">
+        <TextField fullWidth label="domain" name="domain" />
+        <Stack
+          spacing={1}
+          direction="row"
+          justifyContent="center"
+          marginTop="5px"
+        >
           <ErrorOutline />
           <Typography gutterBottom variant="body1">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique
