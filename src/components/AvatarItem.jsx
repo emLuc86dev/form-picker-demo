@@ -16,11 +16,16 @@ const AvatarItem = (dialog) => {
 
   const handleUrlImage = (e) => {
     //save image file pathname
-    const data = URL.createObjectURL(e.target.files[0]);
-    setSelectedFile(data);
-    console.log(e.target.files[0].name);
+    if (e.target.files[0]) {
+      const data = URL.createObjectURL(e.target.files[0]);
+      setSelectedFile(data);
+    }
   };
 
+  const handleCleaning = () => {
+    setSelectedFile("");
+    console.log("cleaning");
+  };
   const onOpenDialog = () => {
     if (avatar && avatar.trim() !== "" && avatar.length > 0) {
       setShowDialog((preState) => !preState);
@@ -29,7 +34,13 @@ const AvatarItem = (dialog) => {
 
   return (
     <>
-      {showDialog && <AlertDialog image={avatar} onShowed={onOpenDialog} />}
+      {showDialog && (
+        <AlertDialog
+          image={selectedFile}
+          onShowed={onOpenDialog}
+          onClean={handleCleaning}
+        />
+      )}
       <Stack spacing={1} direction="row" alignItems="center">
         <Avatar
           sx={{
@@ -54,7 +65,7 @@ const AvatarItem = (dialog) => {
             startIcon={<PhotoCamera />}
             size="small"
           >
-            {avatar.trim().length > 0 ? " Shange Avatar " : "Choose an Avatar"}
+            {avatar.trim().length > 0 ? " Change Avatar " : "Choose an Avatar"}
           </Button>
         </label>
       </Stack>

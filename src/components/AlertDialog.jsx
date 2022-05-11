@@ -5,7 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 
-export default function AlertDialog({ image, onShowed }) {
+export default function AlertDialog({ image, onShowed, onClean }) {
   const [open, setOpen] = React.useState(true);
 
   const handleClickOpen = () => {
@@ -14,10 +14,14 @@ export default function AlertDialog({ image, onShowed }) {
     }
   };
 
-  const handleClose = () => {
+  const handleClose = (e) => {
     setOpen(false);
     //lifting state app to handle avatar click to show the image into th dialog
     onShowed();
+    if(e.target.name === 'clean') {
+        
+        onClean()
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ export default function AlertDialog({ image, onShowed }) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
+          <Button name='clean' onClick={handleClose}>Clean</Button>
           <Button onClick={handleClose} autoFocus>
             Agree
           </Button>
