@@ -1,36 +1,43 @@
 import styled from "@emotion/styled";
 import { PhotoCamera } from "@mui/icons-material";
 import { Avatar, Badge, IconButton, Stack } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import AlertDialog from "./AlertDialog";
 import MessageLogo from "./MessageLogo";
+
+import FormContext from "../context/FormContext";
 
 const Input = styled("input")({
   display: "none",
 });
 
-const SmallAvatar = styled(Avatar)(({ theme }) => ({
-  width: 22,
-  height: 22,
-  border: `2px solid ${theme.palette.background.paper}`,
-}));
+// const SmallAvatar = styled(Avatar)(({ theme }) => ({
+//   width: 22,
+//   height: 22,
+//   border: `2px solid ${theme.palette.background.paper}`,
+// }));
 
 const AvatarBadge = () => {
-  const [selectedFile, setSelectedFile] = useState("");
+  // const [selectedFile, setSelectedFile] = useState("");
   const [showDialog, setShowDialog] = useState(false);
-  let avatar = selectedFile;
+
+  const { image, dispatch } = useContext(FormContext);
+
+  let avatar = image.url;
 
   const handleUrlImage = (e) => {
     //save image file pathname
     if (e.target.files[0]) {
       const data = URL.createObjectURL(e.target.files[0]);
-      setSelectedFile(data);
+      // setSelectedFile(data);
+      dispatch({ type: "IMAGE", payload: data });
     }
   };
 
   const handleCleaning = () => {
-    setSelectedFile("");
-    console.log(selectedFile);
+    // setSelectedFile("");
+    dispatch({ type: "CLEAN_IMAGE" });
+    console.log("IMAE CLEANED");
   };
   const onOpenDialog = () => {
     if (avatar && avatar.trim() !== "" && avatar.length > 0) {
@@ -41,7 +48,7 @@ const AvatarBadge = () => {
     <>
       {showDialog && (
         <AlertDialog
-          image={selectedFile}
+          image={image.url}
           onShowed={onOpenDialog}
           onClean={handleCleaning}
         />
@@ -69,12 +76,13 @@ const AvatarBadge = () => {
           }
         >
           <Avatar
-            src={`${avatar}`}
+            src={`${image.url}`}
             sx={{
-              //   bgcolor: color,
+              borderColor: 'red',
               width: 60,
               height: 60,
             }}
+            
             onClick={onOpenDialog}
           />
         </Badge>

@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 import { PhotoCamera } from "@mui/icons-material";
 import { Avatar, Button, Stack } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import FormContext from "../context/FormContext";
 import AlertDialog from "./AlertDialog";
 import MessageLogo from "./MessageLogo";
 
@@ -10,32 +11,36 @@ const Input = styled("input")({
 });
 
 const AvatarItem = (dialog) => {
-  const [selectedFile, setSelectedFile] = useState("");
   const [showDialog, setShowDialog] = useState(false);
-  let avatar = selectedFile;
+
+  const { image, dispatch } = useContext(FormContext);
+
+  let avatar = image.url;
 
   const handleUrlImage = (e) => {
     //save image file pathname
     if (e.target.files[0]) {
       const data = URL.createObjectURL(e.target.files[0]);
-      setSelectedFile(data);
+      // setSelectedFile(data);
+      dispatch({ type: "IMAGE", payload: data });
     }
   };
 
   const handleCleaning = () => {
-    setSelectedFile("");
+    // setSelectedFile("");
+    dispatch({ type: "CLEAN_IMAGE" });
+    console.log("IMAE CLEANED");
   };
   const onOpenDialog = () => {
     if (avatar && avatar.trim() !== "" && avatar.length > 0) {
       setShowDialog((preState) => !preState);
     }
   };
-
   return (
     <>
       {showDialog && (
         <AlertDialog
-          image={selectedFile}
+          image={avatar}
           onShowed={onOpenDialog}
           onClean={handleCleaning}
         />
@@ -45,7 +50,7 @@ const AvatarItem = (dialog) => {
         {/* Avatar */}
         <Avatar
           sx={{
-            //   bgcolor: color,
+            // bgcolor: 'red',
             width: 56,
             height: 56,
           }}

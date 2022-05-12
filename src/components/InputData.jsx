@@ -1,8 +1,28 @@
+import React, { useContext } from "react";
 import { ErrorOutline } from "@mui/icons-material";
 import { Box, Stack, TextField, Typography } from "@mui/material";
-import React from "react";
+import FormContext from "../context/FormContext";
 
 const InputData = () => {
+  // const [inputsData, setInputsData] = useState({
+  //   nameInput: "",
+  //   domainInput: "",
+  // });
+  // const { nameInput, domainInput } = inputsData;
+
+  const { name, domain, dispatch } = useContext(FormContext);
+
+  const handleInputs = (e) => {
+    // setInputsData((prevState) => ({
+    //   ...prevState,
+    //   [e.target.name]: e.target.value,
+    // }));
+    if (e.target.name.trim() !== "") {
+      let saveName = e.target.name.toUpperCase();
+      dispatch({ type: saveName, payload: e.target.value });
+    }
+  };
+
   return (
     <>
       <Box
@@ -19,11 +39,23 @@ const InputData = () => {
           Espaio de Nombre
         </Typography>
 
-        <TextField fullWidth label="Esp. de trabajo" name="name" />
+        <TextField
+          fullWidth
+          label="Esp. de trabajo"
+          name="name"
+          value={name}
+          onChange={handleInputs}
+        />
         <Typography gutterBottom variant="h6" sx={{ fontWeight: "bold" }}>
           Url del espacio (direcion web)
         </Typography>
-        <TextField fullWidth label="domain" name="domain" />
+        <TextField
+          fullWidth
+          label="domain"
+          name="domain"
+          value={domain}
+          onChange={handleInputs}
+        />
         <Stack
           spacing={1}
           direction="row"

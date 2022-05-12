@@ -4,25 +4,35 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import FormContext from "../context/FormContext";
 
 const workerslist = ["Solo yo", "11-25", "26-50", "51-100", "500+"];
 
-const Workers = () => {
+const Workers = ({ colorChanged }) => {
+  // const [color, setColor] = useState("");
   const [alignment, setAlignment] = React.useState("");
-  const [amountWorker, setAmountWorker] = useState({ toggleButton: 1 });
+  // const [amountWorker, setAmountWorker] = useState("");
+
+  const { colorHex,  dispatch } = useContext(FormContext);
+
+  // const handleColor = () => {
+  //   setColor(colorChanged);
+  // };
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
-    console.log(alignment);
+    // console.log(alignment);
   };
 
   const handleAmountWorker = (e) => {
-    setAmountWorker((preState) => ({
-      ...preState,
-      [e.target.name]: e.currentTarget.value,
-    }));
-    console.log(amountWorker.toggleButton);
+    // setAmountWorker((preState) => ({
+    //   ...preState,
+    //   [e.target.name]: e.currentTarget.value,
+    // }));
+    // console.log(amountWorker.toggleButton);
+    const toggleButton = e.currentTarget.value;
+    dispatch({ type: "WORKERS", payload: toggleButton });
   };
   return (
     <>
@@ -52,26 +62,25 @@ const Workers = () => {
           onChange={handleAlignment}
           //   aria-label="text alignment"
         >
-          <div className="workers">
-            {workerslist.map((worker, index) => {
-              return (
-                <ToggleButton
-                  key={index}
-                  sx={{
-                    boxSizing: "border-box",
-                    marginRight: "10px",
-                    //   border: 1,
-                  }}
-                  value={worker}
-                  name="toggleButton"
-                  // aria-label="left aligned"
-                  onClick={handleAmountWorker}
-                >
-                  {worker}
-                </ToggleButton>
-              );
-            })}
-          </div>
+          {/* <div className="workers"> */}
+          {workerslist.map((worker, index) => {
+            return (
+              <ToggleButton
+                key={index}
+                sx={{
+                  borderColor: colorHex,
+                  marginRight: "10px",
+                }}
+                value={worker}
+                name="toggleButton"
+                // aria-label="left aligned"
+                onClick={handleAmountWorker}
+              >
+                {worker}
+              </ToggleButton>
+            );
+          })}
+          {/* </div> */}
         </ToggleButtonGroup>
       </Box>
     </>
