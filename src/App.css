@@ -29,10 +29,6 @@
   width: 400px;
 }
 
-/* .workers > button {
-  border: 1 solid black;
-} */
-
 .photo_container {
   display: flex;
   justify-content: flex-end;

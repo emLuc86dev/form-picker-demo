@@ -3,13 +3,15 @@ import Circle from "@uiw/react-color-circle";
 import { useState, useContext } from "react";
 import FormContext from "../context/FormContext";
 import "./CirclePicker.css";
+import ColorPicker from "./ColorPicker/ColorPicker";
 
 function CirclePicker({ avatarColor }) {
   const [hex, setHex] = useState("");
   const { dispatch } = useContext(FormContext);
 
-  const handleAvaterColor = () => {
+  const handleAvaterColor = (e) => {
     avatarColor(hex); //lifting state up
+    // console.log(e.target);
   };
 
   const handleColorHex = (color) => {
@@ -23,10 +25,11 @@ function CirclePicker({ avatarColor }) {
         borderColor: hex,
       }}
     >
-      <Stack spacing={2}>
+      <Stack spacing={1}>
         <Typography variant="h6" gutterBottom>
           Color de tema
         </Typography>
+        <Stack spacing={2} direction="row">
         <Circle
           style={{
             display: "flex",
@@ -43,15 +46,18 @@ function CirclePicker({ avatarColor }) {
             "#9c27b0",
             "#673ab7",
             "#3f51b5",
-            "#1866a7",
+            "#576570",
           ]}
           color={hex}
-          onClick={handleAvaterColor}
+          onClick={handleAvaterColor} 
           onChange={(color) => {
             setHex(color.hex);
-            handleColorHex(color.hex);
+            // handleColorHex(color.hex);
+            // console.log(hex);
           }}
         />
+        <ColorPicker />
+        </Stack>
       </Stack>
     </div>
   );

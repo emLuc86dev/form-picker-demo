@@ -11,7 +11,9 @@ export default function AlertDialog({ image, onShowed, onClean }) {
   const handleClickOpen = () => {
     if (image) {
       setOpen(true);
+      return
     }
+    setOpen(false) 
   };
 
   const handleClose = (e) => {
