@@ -19,6 +19,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import IterablePicker from "./components/ColorPicker/IterablePicker";
 import { SvgComponent } from "./components/ColorPicker/SvgComonent";
+import imageSvg from './assets/siteMap.svg'
 
 const SampleIcon = ({
   fill = "red",
@@ -73,9 +74,10 @@ function App() {
           </Stack>
         </div>
         <div className="data_container">
-          <div>
             <SvgComponent name={name} domain={domain} fill={colorHex} />
-          </div>
+         
+            {/* <img src={imageSvg} alt="error loading image" width={'100%'} /> */}
+         
         </div>
       </div>
       <ToastContainer />
