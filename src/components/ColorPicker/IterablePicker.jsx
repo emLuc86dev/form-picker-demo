@@ -1,11 +1,8 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./IterablePicker.css";
 import FormContext from "../../context/FormContext";
-import ColorPicker from "./ColorPicker";
-import reactCSS from "reactcss";
 import { Wrapper, ItemColor, StyledSawtch } from "./IterableStyled";
 import Picker from "./Picker";
-import { green } from "@mui/material/colors";
 
 const colors = [
   "#f44336",
@@ -17,11 +14,10 @@ const colors = [
   "#bccf13",
 ];
 
-let defaultColor = colors[colors.length - 1];
+// let defaultColor = colors[colors.length - 1];
 
 const IterablePicker = ({ editable = false, colorList = colors }) => {
   const [colorV, setColorV] = useState("");
-  const [validate, setValidate] = useState(false);
   const [open, setOpen] = useState(false);
 
   const { colorHex, dispatch } = useContext(FormContext);
@@ -43,12 +39,12 @@ const IterablePicker = ({ editable = false, colorList = colors }) => {
 
   const handleClose = (accepted) => {
     setOpen(false);
-    // if (accepted === true) {
+    // if (accepted === true) { // Don't delete this comented code for future functionality
     dispatch({ type: "COLOR_HEX", payload: colorV });
-    defaultColor = colorV;
+    // defaultColor = colorV;
     colors[colors.length - 1] = colorV;
     return;
-    // } 
+    // }
     // setColorV(defaultColor);
     // dispatch({ type: "COLOR_HEX", payload: colorV })
   };
