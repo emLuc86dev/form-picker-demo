@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import "./IterablePicker.css";
 import FormContext from "../../context/FormContext";
 import { Wrapper, ItemColor, StyledSawtch } from "./IterableStyled";
 import Picker from "./Picker";
@@ -53,7 +52,7 @@ const IterablePicker = ({ editable = false, colorList = colors }) => {
     <Wrapper>
       {colorList.map((color) => {
         if (color === colors[colors.length - 1]) {
-          editable = true;
+          // editable = true;
           return (
             <StyledSawtch key={color} color={color}>
               <ItemColor

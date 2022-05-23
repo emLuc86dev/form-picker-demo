@@ -9,9 +9,8 @@ export const Wrapper = styled.div`
   width: 270;
 `;
 
-export const ItemColor = styled.button.attrs(({ color, value, name }) => ({
+export const ItemColor = styled.button.attrs(({ value, name }) => ({
   type: "text",
-  color: color,
   value: value || "emilio",
   checked: value === name,
 }))`
@@ -26,18 +25,10 @@ export const ItemColor = styled.button.attrs(({ color, value, name }) => ({
   border: 0;
   cursor: pointer;
   transition: height 100ms ease 0s, width 100ms ease 0s;
-  /* &:hover {
-    transition: transform 100ms ease 0s, box-shadow 100ms;
-    transform: scale(0.97);
-  } */
+  
 `;
 
-// export const StyledSawtch = styled.button.attrs(({ color, value, name }) => ({
-//   type: "text",
-//   color: color,
-//   value: value || "emilio",
-//   checked: value === name,
-// }))`
+
 export const StyledSawtch = styled.div`
   background: ${({ color, checked }) => {
     if (checked) return "#fff";
@@ -65,7 +56,4 @@ export const StyledSawtch = styled.div`
     transition: transform 100ms ease 0s, box-shadow 100ms;
     /* transform: scale(0.97); */
   }
-  /* :checked {
-    background-color: green;
-  } */
 `;
