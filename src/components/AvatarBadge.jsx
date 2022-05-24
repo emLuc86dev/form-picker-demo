@@ -11,14 +11,9 @@ const Input = styled("input")({
   display: "none",
 });
 
-// const SmallAvatar = styled(Avatar)(({ theme }) => ({
-//   width: 22,
-//   height: 22,
-//   border: `2px solid ${theme.palette.background.paper}`,
-// }));
+
 
 const AvatarBadge = () => {
-  // const [selectedFile, setSelectedFile] = useState("");
   const [showDialog, setShowDialog] = useState(false);
 
   const { image, dispatch } = useContext(FormContext);
@@ -29,15 +24,12 @@ const AvatarBadge = () => {
     //save image file pathname
     if (e.target.files[0]) {
       const data = URL.createObjectURL(e.target.files[0]);
-      // setSelectedFile(data);
       dispatch({ type: "IMAGE", payload: data });
     }
   };
 
   const handleCleaning = () => {
-    // setSelectedFile("");
     dispatch({ type: "CLEAN_IMAGE" });
-    console.log("IMAE CLEANED");
   };
   const onOpenDialog = () => {
     if (avatar && avatar.trim() !== "" && avatar.length > 0) {

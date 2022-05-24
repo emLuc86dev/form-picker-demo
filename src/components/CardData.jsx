@@ -20,10 +20,10 @@ export default function CardData() {
     useContext(FormContext);
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 300 }}>
       <CardMedia
         component="img"
-        height="140"
+        height="220"
         image={image.url}
         alt="green iguana"
       />
@@ -31,7 +31,7 @@ export default function CardData() {
         <Typography gutterBottom variant="h6" component="div">
           {name}
         </Typography>
-        <Stack direction="row" spacing={2}>
+        <Stack spacing={2}>
           <div className="card_data">
             <Typography
               gutterBottom
@@ -45,7 +45,7 @@ export default function CardData() {
             </Typography>
           </div>
         </Stack>
-        <Stack direction="row" spacing={2}>
+        <Stack spacing={2}>
           <div className="card_data">
             <Typography
               gutterBottom
@@ -59,7 +59,7 @@ export default function CardData() {
             </Typography>
           </div>
         </Stack>
-        <Stack direction="row" spacing={2}>
+        <Stack spacing={2}>
           <div className="card_data">
             <Typography
               gutterBottom

@@ -19,27 +19,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import IterablePicker from "./components/ColorPicker/IterablePicker";
 import { SvgComponent } from "./components/ColorPicker/SvgComonent";
-import imageSvg from './assets/siteMap.svg'
-
-const SampleIcon = ({
-  fill = "red",
-  backgroundColor = "white",
-  width = "300",
-  height = "200",
-  SVG,
-}) => (
-  <svg
-    version="1.1"
-    width={width}
-    height={height}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="100%" height="100%" fill={backgroundColor} />
-    <text x="150" y="125" font-size="60" text-anchor="middle" fill={fill}>
-      {SVG}
-    </text>
-  </svg>
-);
+import imageSvg from "./assets/siteMap.svg";
 
 function App() {
   const [color, setColor] = useState("");
@@ -74,10 +54,9 @@ function App() {
           </Stack>
         </div>
         <div className="data_container">
-            <SvgComponent name={name} domain={domain} fill={colorHex} />
-         
-            {/* <img src={imageSvg} alt="error loading image" width={'100%'} /> */}
-         
+          <SvgComponent name={name} domain={domain} fill={colorHex} />
+
+          {/* <img src={imageSvg} alt="error loading image" width={'100%'} /> */}
         </div>
       </div>
       <ToastContainer />

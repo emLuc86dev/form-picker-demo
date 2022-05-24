@@ -15,7 +15,7 @@ const colors = [
 
 // let defaultColor = colors[colors.length - 1];
 
-const IterablePicker = ({ editable = false, colorList = colors }) => {
+const IterablePicker = () => {
   const [colorV, setColorV] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -34,6 +34,7 @@ const IterablePicker = ({ editable = false, colorList = colors }) => {
 
   const handleChange = (color) => {
     setColorV(color.hex);
+    
   };
 
   const handleClose = (accepted) => {
@@ -50,16 +51,14 @@ const IterablePicker = ({ editable = false, colorList = colors }) => {
 
   return (
     <Wrapper>
-      {colorList.map((color) => {
+      {colors.map((color, index) => {
         if (color === colors[colors.length - 1]) {
-          // editable = true;
           return (
             <StyledSawtch key={color} color={color}>
               <ItemColor
-                key={color}
                 color={color}
                 name={color}
-                value={colorV}
+                value={colorHex}
                 onClick={handleClick}
               />
               {open && (
@@ -72,11 +71,9 @@ const IterablePicker = ({ editable = false, colorList = colors }) => {
             </StyledSawtch>
           );
         }
-
         return (
           <StyledSawtch key={color} color={color}>
             <ItemColor
-              key={color}
               color={color}
               name={color}
               value={colorV}

@@ -30,10 +30,7 @@ export const ItemColor = styled.button.attrs(({ value, name }) => ({
 
 
 export const StyledSawtch = styled.div`
-  background: ${({ color, checked }) => {
-    if (checked) return "#fff";
-    return color;
-  }};
+  background: ${({ color }) => color};
   height: 28px;
   width: 28px;
   margin-top: 12px;

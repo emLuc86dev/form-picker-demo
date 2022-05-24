@@ -19,11 +19,6 @@ export default function DataCollection() {
 
   const handleClose = (e) => {
     setOpen(false);
-    //lifting state app to handle avatar click to show the image into th dialog
-    // onShowed();
-    // if (e.target.name === "clean") {
-    //   onClean(); //lifting state app to clean avatar image
-    // }
   };
 
   const handleIsValid = useCallback(() => {
@@ -35,8 +30,6 @@ export default function DataCollection() {
       workers.trim().length > 0 &&
       colorHex.trim().length > 0
     ) {
-      //code here
-      console.log(colorHex);
       dispatch({ type: "VALID", payload: true });
       return;
     }
@@ -46,7 +39,7 @@ export default function DataCollection() {
   const onReset = () => {
     dispatch({ type: "RESET" });
     setOpen(false);
-    toast.success("Successfully sent!")
+    toast.success("Successfully sent!");
   };
 
   useEffect(() => {

@@ -20,6 +20,13 @@
   flex-wrap: wrap;
 }
 
+.card_data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 @media (max-width: 40rem) {
   .main_container {
     display: flex;
