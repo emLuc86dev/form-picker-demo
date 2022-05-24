@@ -1,0 +1,47 @@
+ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="ba3ab3b8-01bc-4f17-86ee-a21af0b76c5b" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="865.76" height="682.89" viewBox="0 0 865.76 682.89">
+<defs>
+<style xmlns="http://www.w3.org/1999/xhtml">*, ::after, ::before { box-sizing: border-box; }
+img, svg { vertical-align: middle; }
+</style>
+<style xmlns="http://www.w3.org/1999/xhtml">*, body, html { -webkit-font-smoothing: antialiased; }
+img, svg { max-width: 100%; }
+</style>
+</defs>
+<rect x="91.57" y="81.96" width="307.75" height="190.36" fill="#f2f2f2"/>
+<path d="M418.35,71.16c0-6.61-5.92-11.41-12.53-11.41H85.18c-6.61,0-12.64,4.8-12.64,11.41V285H418.35Zm-19,201.16H91.57V82H399.32Z" fill="#2f2e41" data-secondary="true"/>
+<path d="M324,291.36H32.4a96.55,96.55,0,0,0,22.71,25.37H435.78a96.55,96.55,0,0,0,22.71-25.37Z" fill="#2f2e41" data-secondary="true"/>
+<rect x="111.35" y="188.19" width="119.78" height="21.34" fill="#0071f2" data-primary="true"/>
+<rect x="111.35" y="219.46" width="259.6" height="12.43" fill="#e4e4e4"/>
+<rect x="111.35" y="241.55" width="238.93" height="12.42" fill="#e4e4e4"/>
+<rect x="111.35" y="132.99" width="259.6" height="12.42" fill="#e4e4e4"/>
+<rect x="111.35" y="155.08" width="238.93" height="12.43" fill="#e4e4e4"/>
+<rect x="111.35" y="98.93" width="200.56" height="12.43" fill="#e4e4e4"/>
+<path d="M233.83,449.93V158.56a11.27,11.27,0,0,1,11.26-11.27H722.27a11.26,11.26,0,0,1,11.26,11.27V449.93Z" fill="#2f2e41" fill-rule="evenodd" data-secondary="true"/>
+<path d="M233.83,449.93V158.56a11.27,11.27,0,0,1,11.26-11.27H722.27a11.26,11.26,0,0,1,11.26,11.27V449.93Z" fill-rule="evenodd" opacity="0.2"/>
+<path d="M233.83,449.93v33.78A11.27,11.27,0,0,0,245.09,495h192l-13.18,50.27-19.72,2.4v6.21H571.67v-6.21l-19.73-2.4L538.77,495h183.5a11.26,11.26,0,0,0,11.26-11.26V449.93Z" fill="#2f2e41" fill-rule="evenodd" data-secondary="true"/>
+<path d="M233.83,449.93v33.78A11.27,11.27,0,0,0,245.09,495h192l-13.18,50.27-19.72,2.4v6.21H571.67v-6.21l-19.73-2.4L538.77,495h183.5a11.26,11.26,0,0,0,11.26-11.26V449.93Z" fill-rule="evenodd" opacity="0.2"/>
+<path d="M714,169.26V428H253.35V169.26Z" fill="#f0f0f1" fill-rule="evenodd"/>
+<rect x="284.06" y="194.98" width="69.72" height="69.73" fill="#e4e4e4"/>
+<rect x="569.51" y="284.63" width="69.73" height="69.73" fill="#e4e4e4"/>
+<rect x="657.4" y="284.63" width="24" height="121.24" fill="#e4e4e4"/>
+<rect x="569.51" y="194.98" width="111.89" height="69.73" fill="#e4e4e4"/>
+<rect x="284.06" y="284.63" width="69.72" height="69.73" fill="#e4e4e4"/>
+<rect x="284.06" y="372.36" width="69.72" height="30.71" fill="#e4e4e4"/>
+<rect x="569.51" y="372.36" width="69.73" height="30.71" fill="#e4e4e4"/>
+<rect x="462.76" y="284.63" width="87.72" height="121.24" fill="#0071f2" data-primary="true"/>
+<rect x="373.71" y="194.98" width="176.77" height="69.73" fill="#0071f2" data-primary="true"/>
+<rect x="373.71" y="284.63" width="69.72" height="121.24" fill="#0071f2" data-primary="true"/>
+<path d="M629.77,319.49H816.1a17.26,17.26,0,0,1,17.27,17.26V605.89a17.26,17.26,0,0,1-17.27,17.26H629.77a17.25,17.25,0,0,1-17.25-17.26V336.75A17.25,17.25,0,0,1,629.77,319.49Z" fill="#2f2e41" fill-rule="evenodd" data-secondary="true"/>
+<path d="M722.94,599.71a7.87,7.87,0,1,1-7.86,7.87A7.87,7.87,0,0,1,722.94,599.71Z" fill="#e8e9e8" fill-rule="evenodd"/>
+<path d="M623.24,350.54h199.4V592.1H623.24Z" fill="#f0f0f1" fill-rule="evenodd"/>
+<rect x="642.78" y="525.63" width="127.51" height="14.94" fill="#e4e4e4"/>
+<rect x="642.78" y="547.52" width="157.15" height="8.71" fill="#e4e4e4"/>
+<rect x="642.78" y="562.98" width="144.63" height="8.7" fill="#0071f2" data-primary="true"/>
+<rect x="642.78" y="389.55" width="144.63" height="14.93" fill="#0071f2" data-primary="true"/>
+<rect x="642.78" y="411.43" width="157.15" height="8.7" fill="#e4e4e4"/>
+<rect x="642.78" y="426.9" width="127.51" height="8.7" fill="#e4e4e4"/>
+<rect x="642.78" y="366.37" width="157.08" height="8.7" fill="#e4e4e4"/>
+<rect x="641.46" y="451.48" width="69.25" height="62.8" fill="#0071f2" data-primary="true"/>
+<rect x="726.19" y="451.48" width="69.25" height="62.8" fill="#0071f2" data-primary="true"/>
+</svg>

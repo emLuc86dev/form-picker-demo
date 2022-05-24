@@ -9,6 +9,7 @@ import Workers from "./components/Workers";
 import MessageLogo from "./components/MessageLogo";
 
 import { ReactComponent as ImageLogo } from "./assets/siteMap.svg";
+import { ReactComponent as Responsive } from "./assets/Responsive.svg";
 import { ThemeProvider } from "@mui/material/styles";
 import { darkTheme } from "./UI/Themes";
 
@@ -56,7 +57,7 @@ function App() {
         <div className="data_container">
           <SvgComponent name={name} domain={domain} fill={colorHex} />
 
-          {/* <img src={imageSvg} alt="error loading image" width={'100%'} /> */}
+          {/* <ImageLogo fill={colorHex} width='100%' /> */}
         </div>
       </div>
       <ToastContainer />
