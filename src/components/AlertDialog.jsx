@@ -11,9 +11,9 @@ export default function AlertDialog({ image, onShowed, onClean }) {
   const handleClickOpen = () => {
     if (image) {
       setOpen(true);
-      return
+      return;
     }
-    setOpen(false) 
+    setOpen(false);
   };
 
   const handleClose = (e) => {
@@ -32,6 +32,7 @@ export default function AlertDialog({ image, onShowed, onClean }) {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        sx={{ margin: "auto" }}
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
