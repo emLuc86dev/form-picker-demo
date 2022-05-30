@@ -24,7 +24,7 @@ export const ItemColor = styled.button.attrs(({ value, name }) => ({
   border-radius: 50%;
   border: 0;
   cursor: pointer;
-  transition: height 100ms ease 0s, width 100ms ease 0s;
+  transition: background-color 100ms ease-in 0.1s ;
   
 `;
 
@@ -46,6 +46,7 @@ export const StyledSawtch = styled.div`
   padding: 3px;
   box-sizing: border-box;
   transform: scale(1);
+  transition: transform 100ms ease 0.1s;
   box-shadow: rgb(233 30 99) 0px 0px 0px;
   border: 0;
   &:hover {
